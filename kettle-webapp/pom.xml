@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>kettle</artifactId>
+        <groupId>org.flhy</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>org.flhy.webapp</groupId>
+    <artifactId>kettle-webapp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.flhy.ext</groupId>
+            <artifactId>kettle-ext</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.sxdata.jingwei</groupId>
+            <artifactId>jingwei-task-monitor</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/</path>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <url>http://localhost:8080/manager/html</url>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
